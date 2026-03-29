@@ -1,0 +1,9 @@
+[variables]
+NIXPACKS_JDK_VERSION = "21"
+
+[phases.build]
+cmds = ["./gradlew --no-daemon clean bootJar"]
+
+[start]
+cmd = "java -jar build/libs/app.jar"
+
