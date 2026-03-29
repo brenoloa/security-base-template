@@ -1,0 +1,21 @@
+package core.config;
+
+import core.resolver.UsuarioLogadoResolver;
+import lombok.RequiredArgsConstructor;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.method.support.HandlerMethodArgumentResolver;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+import java.util.List;
+
+@Configuration
+@RequiredArgsConstructor
+public class JwtConfig implements WebMvcConfigurer {
+
+    private final UsuarioLogadoResolver usuarioLogadoResolver;
+
+    @Override
+    public void addArgumentResolvers(List<HandlerMethodArgumentResolver> resolvers) {
+        resolvers.add(usuarioLogadoResolver);
+    }
+}

@@ -1,0 +1,27 @@
+### Login Mock para obter Token JWT
+POST http://localhost:8080/api/auth/login-mock
+Content-Type: application/json
+
+{
+  "userId": "123",
+  "email": "user@example.com",
+  "roles": ["USER"]
+}
+
+> {%
+ client.global.set("auth_token", response.body);
+ %}
+
+### Login Mock como ADMIN
+POST http://localhost:8080/api/auth/login-mock
+Content-Type: application/json
+
+{
+  "userId": "456",
+  "email": "admin@example.com",
+  "roles": ["ADMIN"]
+}
+
+> {%
+ client.global.set("auth_token", response.body);
+ %}

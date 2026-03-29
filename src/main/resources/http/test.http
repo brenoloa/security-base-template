@@ -1,0 +1,11 @@
+### Obter informações do usuário logado
+GET http://localhost:8080/api/test/me
+Authorization: Bearer {{auth_token}}
+
+### Acesso a endpoint ADMIN (Requer login como ADMIN em auth.http)
+GET http://localhost:8080/api/test/admin
+Authorization: Bearer {{auth_token}}
+
+### Acesso a endpoint USER (Requer login em auth.http)
+GET http://localhost:8080/api/test/user
+Authorization: Bearer {{auth_token}}
