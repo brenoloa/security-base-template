@@ -5,7 +5,7 @@
   },
   "deploy": {
     "startCommand": "java -jar build/libs/security-kit.jar",
-    "healthcheckPath": "/",
+    "healthcheckPath": "/api/status",
     "restartPolicyType": "ON_FAILURE"
   }
 }
