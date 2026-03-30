@@ -47,6 +47,16 @@ dependencies {
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
+springBoot {
+	buildInfo {
+		properties {
+			additional = [
+				"gradle.version": gradle.gradleVersion
+			]
+		}
+	}
+}
+
 tasks.named('test') {
 	useJUnitPlatform()
 }
